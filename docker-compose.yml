@@ -1,0 +1,29 @@
+services:
+  
+  server:
+    build: ./server
+    ports:
+      - "8080:8080"
+    volumes:
+      - shared_data:/shared_data
+  
+  client_mobile:
+    build: ./client_mobile
+    volumes:
+      - shared_data:/shared_data
+    entrypoint: ["/app/build.sh"]
+    restart: "no"
+    depends_on:
+      - server
+
+  client_web:
+    build: ./client_web
+    ports:
+      - "8081:8081"
+    volumes:
+      - shared_data:/shared_data
+    depends_on:
+      - server
+      - client_mobile
+volumes:
+  shared_data:
