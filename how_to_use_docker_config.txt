@@ -1,0 +1,5 @@
+# Development mode
+docker-compose up
+
+# Production mode
+docker-compose -f docker-compose.yml up --build -d

@@ -1,7 +1,10 @@
 FROM node:20-alpine
 WORKDIR /app
-COPY index.js ./
-RUN npm install express
+COPY package*.json ./
+RUN npm install
+COPY . .
 VOLUME ["/shared_data"]
 EXPOSE 8081
-CMD ["node", "index.js"]
+COPY wait-for-file.sh /usr/local/bin/wait-for-file.sh
+RUN chmod +x /usr/local/bin/wait-for-file.sh
+CMD ["npm", "start"]
