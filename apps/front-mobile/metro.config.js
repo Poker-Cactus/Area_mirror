@@ -12,6 +12,9 @@ const { assetExts, sourceExts } = defaultConfig.resolver;
  */
 const customConfig = {
   cacheVersion: 'front-mobile',
+  server: {
+    port: 8082,
+  },
   transformer: {
     babelTransformerPath: require.resolve('react-native-svg-transformer'),
   },
