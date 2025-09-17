@@ -8,18 +8,14 @@ export default defineConfig(() => ({
   root: __dirname,
   cacheDir: '../../node_modules/.vite/apps/front-web',
   server: {
-    port: 4242,
-    host: 'localhost',
+    port: 8081,
+    host: '0.0.0.0',
   },
   preview: {
-    port: 4242,
-    host: 'localhost',
+    port: 8081,
+    host: '0.0.0.0',
   },
   plugins: [react(), nxViteTsPaths(), nxCopyAssetsPlugin(['*.md'])],
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
   build: {
     outDir: '../../dist/apps/front-web',
     emptyOutDir: true,

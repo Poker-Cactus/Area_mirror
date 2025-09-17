@@ -14,9 +14,9 @@
         "outputPath": "dist/apps/server",
         "format": ["cjs"],
         "bundle": false,
-        "main": "/apps/server/src/main.ts",
-        "tsConfig": "/apps/server/tsconfig.app.json",
-        "assets": ["/apps/server/src/assets"],
+        "main": "apps/server/src/main.ts",
+        "tsConfig": "apps/server/tsconfig.app.json",
+        "assets": ["apps/server/src/assets"],
         "generatePackageJson": true,
         "esbuildOptions": {
           "sourcemap": true,
@@ -69,7 +69,8 @@
       "dependsOn": ["build"],
       "options": {
         "buildTarget": "server:build",
-        "runBuildTargetDependencies": false
+        "runBuildTargetDependencies": false,
+        "inspect": false
       },
       "configurations": {
         "development": {
