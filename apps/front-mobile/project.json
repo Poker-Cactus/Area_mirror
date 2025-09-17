@@ -1,0 +1,16 @@
+{
+  "name": "front-mobile",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/front-mobile/src",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project front-mobile --web",
+  "targets": {
+    "build-android": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cd apps/front-mobile/android && ./gradlew assembleDebug"
+      }
+    }
+  }
+}

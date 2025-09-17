@@ -1,29 +1,29 @@
+version: '3.8'
+
 services:
-  
   server:
-    build: ./server
+    build:
+      context: .
+      dockerfile: apps/server/Dockerfile
     ports:
       - "8080:8080"
-    volumes:
-      - shared_data:/shared_data
-  
-  client_mobile:
-    build: ./client_mobile
-    volumes:
-      - shared_data:/shared_data
-    entrypoint: ["/app/build.sh"]
-    restart: "no"
-    depends_on:
-      - server
+
+  # client_mobile: # Mobile not working yet
+  #   build:
+  #     context: .
+  #     dockerfile: apps/front-mobile/Dockerfile
+  #   volumes:
+  #     - ./shared:/shared
+  #   command: sh -c "npm run build && cp /app/android/app/build/outputs/apk/release/app-release.apk /shared/client.apk"
 
   client_web:
-    build: ./client_web
+    build:
+      context: .
+      dockerfile: apps/front-web/Dockerfile
     ports:
       - "8081:8081"
-    volumes:
-      - shared_data:/shared_data
     depends_on:
+      # - client_mobile
       - server
-      - client_mobile
-volumes:
-  shared_data:
+    volumes:
+      - ./shared:/shared
