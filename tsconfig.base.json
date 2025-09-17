@@ -16,7 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "core": ["libs/core/src/index.ts"],
-      "gmail-service": ["libs/gmail-service/src/index.ts"]
+      "discord-service": ["libs/discord-service/src/index.ts"],
+      "gmail-service": ["libs/gmail-service/src/index.ts"],
+      "spotify-service": ["libs/spotify-service/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

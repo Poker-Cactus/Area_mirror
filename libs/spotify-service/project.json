@@ -1,0 +1,20 @@
+{
+  "name": "spotify-service",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/spotify-service/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/spotify-service",
+        "tsConfig": "libs/spotify-service/tsconfig.lib.json",
+        "packageJson": "libs/spotify-service/package.json",
+        "main": "libs/spotify-service/src/index.ts",
+        "assets": ["libs/spotify-service/*.md"]
+      }
+    }
+  }
+}

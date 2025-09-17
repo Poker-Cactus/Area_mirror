@@ -1,0 +1,20 @@
+{
+  "name": "discord-service",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/discord-service/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/discord-service",
+        "tsConfig": "libs/discord-service/tsconfig.lib.json",
+        "packageJson": "libs/discord-service/package.json",
+        "main": "libs/discord-service/src/index.ts",
+        "assets": ["libs/discord-service/*.md"]
+      }
+    }
+  }
+}
