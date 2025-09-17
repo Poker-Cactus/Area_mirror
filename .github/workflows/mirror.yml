@@ -1,4 +1,3 @@
-
 name: Mirror main branch to repo2
 
 on:
@@ -9,6 +8,8 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+
+    if: github.repository != 'EpitechPGE3-2025/G-DEV-500-MPL-5-1-area-3'
     steps:
       # Checkout the source repo
       - name: Checkout source repo
