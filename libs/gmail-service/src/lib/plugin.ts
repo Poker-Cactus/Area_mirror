@@ -12,7 +12,7 @@ export default class GmailServicePlugin implements ServicePlugin {
   name = 'Gmail';
   version = '1.0.0';
   description = 'Gmail service for sending and receiving emails';
-  authType: 'oauth2' = 'oauth2';
+  authType = 'oauth2' as const;
   logoUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/512px-Gmail_icon_%282020%29.svg.png';
 
   actions: ServiceAction[] = [
@@ -141,7 +141,7 @@ export default class GmailServicePlugin implements ServicePlugin {
     };
   }
 
-  private async handleNewEmailWithAttachment(params: any, context: { userId: string; auth?: any }): Promise<any> {
+  private async handleNewEmailWithAttachment(_params: any, context: { userId: string; auth?: any }): Promise<any> {
     console.log(`📎 Checking for new emails with attachments for user ${context.userId}`);
     
     // TODO: Implement Gmail API integration for emails with attachments
