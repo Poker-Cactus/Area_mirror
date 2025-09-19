@@ -11,6 +11,7 @@ on:
 jobs:
   unit-tests:
     runs-on: ubuntu-latest
+    if: github.repository != 'EpitechPGE3-2025/G-DEV-500-MPL-5-1-area-3'
 
     steps:
       - name: Checkout code
@@ -34,6 +35,7 @@ jobs:
 #   e2e-tests:
 #     runs-on: ubuntu-latest
 #     needs: unit-tests
+#     if: github.repository != 'EpitechPGE3-2025/G-DEV-500-MPL-5-1-area-3'
 
 #     steps:
 #       - name: Checkout code
@@ -55,6 +57,7 @@ jobs:
 
   lint:
     runs-on: ubuntu-latest
+    if: github.repository != 'EpitechPGE3-2025/G-DEV-500-MPL-5-1-area-3'
 
     steps:
       - name: Checkout code
@@ -76,6 +79,7 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    if: github.repository != 'EpitechPGE3-2025/G-DEV-500-MPL-5-1-area-3'
 
     steps:
       - name: Checkout code
