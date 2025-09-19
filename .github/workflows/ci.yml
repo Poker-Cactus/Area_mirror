@@ -25,7 +25,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Run unit tests
         run: npx nx run-many -t test --parallel=3 --exclude=server-e2e
@@ -48,7 +48,7 @@ jobs:
 #           cache: 'npm'
 
 #       - name: Install dependencies
-#         run: npm ci
+#         run: npm install
 
 #       - name: Run e2e tests
 #         run: npx nx run-many -t e2e --parallel=2
@@ -69,7 +69,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Run linting
         run: npx nx run-many -t lint --parallel=3
@@ -90,7 +90,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Run build
         run: npx nx run-many -t build --parallel=3
